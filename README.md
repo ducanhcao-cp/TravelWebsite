@@ -7,4 +7,5 @@ Các tính năng: Xem giới thiệu tour, đặt tour trực tuyến, gửi li�
 
 Mô tả cơ sở dữ liệu: 
 
-![image](https://user-images.githubusercontent.com/79506350/111244043-bb13f200-8634-11eb-8dc8-0214cb9e3eac.png)
+![image](https://user-images.githubusercontent.com/79506350/112018485-2e4fc380-8b61-11eb-9652-9fc92686a704.png)
+
