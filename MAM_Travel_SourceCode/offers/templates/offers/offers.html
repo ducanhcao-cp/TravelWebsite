@@ -1,0 +1,270 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>MAM Travel - Tours</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travelix Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/offers_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/offers_responsive.css' %}">
+{% endblock %}
+
+    {% block content %}
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/about_background.jpg' %}"></div>
+		<div class="home_content">
+			<div class="home_title">our offers</div>
+		</div>
+	</div>
+
+	<!-- Offers -->
+
+	<div class="offers">
+
+		<!-- Search -->
+
+		<div class="search">
+			<div class="search_inner">
+
+				<!-- Search Contents -->
+				
+				<div class="container fill_height no-padding">
+					<div class="row fill_height no-margin">
+						<div class="col fill_height no-padding">
+
+							<!-- Search Tabs -->
+
+							<div class="search_tabs_container">
+								<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/suitcase.png' %}" alt=""><span>Đặt tour</span></div>
+									
+								<!-- Open feature
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/bus.png' %}" alt="">car rentals</div>
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/departure.png' %}" alt="">flights</div>
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/island.png' %}" alt="">trips</div>
+								-->
+								</div>		
+							</div>
+
+							<!-- Search Panel -->
+
+							<div class="search_panel active">
+								<form action="{% url 'offers:getDeal' %}" method="POST" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									
+									<div class="search_item">
+										<label for="id_tour"></label>
+										<div>Tour</div>								
+										<select name="tour" required_id="id_tour" class="dropdown_item_select search_input" placeholder="" required="required">
+											<option hidden disabled selected value> Bạn muốn đi đâu? </option>
+											{% for item in tourList %}
+											<option>{{item.title}}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<div class="search_item">
+										<label for="id_name"></label>
+										<div>Họ và tên</div>								
+										<input type="text" name="name" maxlength="50" required_id="id_name" class="destination search_input" placeholder="">
+									</div>
+									<div class="search_item">
+										<label for="id_phone_number"></label>
+										<div>Số điện thoại</div>								
+										<input type="text" name="phone_number" maxlength="15" required_id="id_phone_number" class="destination search_input" placeholder="">
+									</div>
+									<div class="search_item">
+										<label for="id_adult"></label>
+										<div>Người lớn</div>								
+										<select name="adult" required_id="id_adult" id="adults_2" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+											<option>04</option>
+											<option>05</option>
+											<option>06</option>
+											<option>07</option>
+											<option>08</option>
+											<option>09</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+										</select>
+									</div>
+									<div class="search_item">
+										<label for="id_children"></label>
+										<div>Trẻ em</div>								
+										<select name="children" required_id="id_children" id="adults_2" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+											<option>04</option>
+											<option>05</option>
+											<option>06</option>
+											<option>07</option>
+											<option>08</option>
+											<option>09</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+										</select>
+									</div>
+									<!--
+									<div class="extras">
+										<ul class="search_extras clearfix">
+											<li class="search_extras_item">
+												<div class="clearfix">
+													<input type="checkbox" id="search_extras_1" class="search_extras_cb">
+													<label for="search_extras_1">Pet Friendly</label>
+												</div>	
+											</li>
+									
+										</ul>
+									</div>
+									-->
+									<button class="button search_button">Gửi yêu cầu<span></span><span></span><span></span></button>
+									{% csrf_token %}
+								</form>
+							</div>	
+
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</div>
+
+		<!-- Offers -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1 temp_col"></div>
+				<div class="col-lg-11">
+					
+					<!-- Offers Sorting -->
+					<div class="offers_sorting_container">
+						<ul class="offers_sorting">
+							<li>
+								<span class="sorting_text">price</span>
+								<i class="fa fa-chevron-down"></i>
+								<ul>
+									<li class="sort_btn" data-isotope-option='{ "sortBy": "original-order" }' data-parent=".price_sorting"><span>show all</span></li>
+									<li class="sort_btn" data-isotope-option='{ "sortBy": "price" }' data-parent=".price_sorting"><span>ascending</span></li>
+								</ul>
+							</li>
+							<li>
+								<span class="sorting_text">location</span>
+								<i class="fa fa-chevron-down"></i>
+								<ul>
+									<li class="sort_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>default</span></li>
+									<li class="sort_btn" data-isotope-option='{ "sortBy": "name" }'><span>alphabetical</span></li>
+								</ul>
+							</li>
+							<li>
+								<span class="sorting_text">stars</span>
+								<i class="fa fa-chevron-down"></i>
+								<ul>
+									<li class="filter_btn" data-filter="*"><span>show all</span></li>
+									<li class="sort_btn" data-isotope-option='{ "sortBy": "stars" }'><span>ascending</span></li>
+									<li class="filter_btn" data-filter=".rating_3"><span>3</span></li>
+									<li class="filter_btn" data-filter=".rating_4"><span>4</span></li>
+									<li class="filter_btn" data-filter=".rating_5"><span>5</span></li>
+								</ul>
+							</li>
+							<li class="distance_item">
+								<span class="sorting_text">distance from center</span>
+								<i class="fa fa-chevron-down"></i>
+								<ul>
+									<li class="num_sorting_btn"><span>distance</span></li>
+									<li class="num_sorting_btn"><span>distance</span></li>
+									<li class="num_sorting_btn"><span>distance</span></li>
+								</ul>
+							</li>
+							<!--
+							<li>
+								<span class="sorting_text">reviews</span>
+								<i class="fa fa-chevron-down"></i>
+								<ul>
+									<li class="num_sorting_btn"><span>review</span></li>
+									<li class="num_sorting_btn"><span>review</span></li>
+									<li class="num_sorting_btn"><span>review</span></li>
+								</ul>
+							</li>
+							-->
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-12">
+					<!-- Offers Grid -->
+
+					<div class="offers_grid">
+
+						<!-- Offers Item -->
+						{% for item in tourList %}
+						<div class="offers_item rating_4">
+							<div class="row">
+								<div class="col-lg-1 temp_col"></div>
+								<div class="col-lg-3 col-1680-4">
+									<div class="offers_image_container">
+										<!-- Image by https://unsplash.com/@kensuarez -->
+										<div class="offers_image_background" style="background-image:url('{{ MEDIA_URL }}{{ item.image.url }}')"></div>
+										<div class="offer_price"><a href="{% url 'offers:offersDetail' item.id %}">{{item.price}} VND</a></div>
+									</div>
+								</div>
+								<div class="col-lg-8">
+									<div class="offers_content">
+										<div class="offers_name">{{item.title}}<span>{{item.trip_duration}}</span></div>
+										<div class="rating_r rating_r_4 offers_rating" data-rating="4">
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+										</div>
+										<p class="offers_text">{{item.description}}</p>
+										<div class="offers_icons">
+											<ul class="offers_icons_list">
+												<li class="offers_icons_item"><img src="{% static 'images/post.png' %}" alt=""></li>
+												<li class="offers_icons_item"><img src="{% static 'images/compass.png' %}" alt=""></li>
+												<li class="offers_icons_item"><img src="{% static 'images/bicycle.png' %}" alt=""></li>
+												<li class="offers_icons_item"><img src="{% static 'images/sailboat.png' %}" alt=""></li>
+											</ul>
+										</div>
+										<div class="button book_button"><a href="{% url 'offers:offersDetail' item.id %}">Chi tiết<span></span><span></span><span></span></a></div>
+										
+										<div class="offer_reviews">
+											<div class="offer_reviews_content">
+												<div class="offer_reviews_title">{{item.review_title}}</div>
+												<div class="offer_reviews_subtitle">{{item.review_number}} reviews</div>
+											</div>
+											<div class="offer_reviews_rating text-center">{{item.rating}}</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+
+			</div>
+		</div>		
+	</div>
+    {% endblock %}
+
+{% block script %}
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/offers_custom.js' %}"></script>
+{% endblock %}

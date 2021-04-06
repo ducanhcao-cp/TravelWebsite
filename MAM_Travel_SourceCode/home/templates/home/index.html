@@ -1,0 +1,652 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>MAM Travel - Du lịch trải nghiệm</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travelix Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+{% endblock %}
+
+    {% block content %}
+    <!-- Home -->
+
+	<div class="home">
+		
+		<!-- Home Slider -->
+
+		<div class="home_slider_container">
+			
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Slider Item -->
+				<div class="owl-item home_slider_item">
+					<div class="home_slider_background" style="background-image:url(static/images/home_slider_03.jpg)"></div>
+
+					<div class="home_slider_content text-center">
+						<div class="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
+							<h1>Du lịch - trải nghiệm</h1>
+							<h1>travel and more</h1>
+							<div class="button home_slider_button"><div class="button_bcg"></div><a href="{% url 'offers:offers' %}">khám phá ngay<span></span><span></span><span></span></a></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- 
+
+			!-- Home Slider Nav - Prev --
+			<div class="home_slider_nav home_slider_prev">
+				<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+					<defs>
+						<linearGradient id='home_grad_prev'>
+							<stop offset='0%' stop-color='#fa9e1b'/>
+							<stop offset='100%' stop-color='#8d4fff'/>
+						</linearGradient>
+					</defs>
+					<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+					M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+					C22.545,2,26,5.541,26,9.909V23.091z"/>
+					<polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+					11.042,18.219 "/>
+				</svg>
+			</div>
+			
+			!-- Home Slider Nav - Next --
+			<div class="home_slider_nav home_slider_next">
+				<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+					<defs>
+						<linearGradient id='home_grad_next'>
+							<stop offset='0%' stop-color='#fa9e1b'/>
+							<stop offset='100%' stop-color='#8d4fff'/>
+						</linearGradient>
+					</defs>
+				<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+				M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+				C22.545,2,26,5.541,26,9.909V23.091z"/>
+				<polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+				17.046,15.554 "/>
+				</svg>
+			</div>
+
+			!-- Home Slider Dots --
+
+			<div class="home_slider_dots">
+				<ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+					<li class="home_slider_custom_dot active"><div></div>01.</li>
+					<li class="home_slider_custom_dot"><div></div>02.</li>
+					<li class="home_slider_custom_dot"><div></div>03.</li>
+				</ul>
+			</div>
+		-->
+
+		</div>
+
+	</div>
+
+	<!-- Search -->
+
+	<div class="search">
+		
+
+		<!-- Search Contents -->
+		
+		<div class="container fill_height">
+			<div class="row fill_height">
+				<div class="col fill_height">
+
+					<!-- Search Tabs -->
+
+					<div class="search_tabs_container">
+						<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+							<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><span>Đặt tour trực tuyến</span></div>
+							
+							
+							<!--
+							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start">Tìm kiếm</div>
+							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/departure.png" alt="">flights</div>
+							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/island.png" alt="">trips</div>
+							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/cruise.png" alt="">cruises</div>
+							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/diving.png" alt="">activities</div>
+							-->
+						</div>		
+					</div>
+
+					<!-- Search Panel -->
+
+					<div class="search_panel active">
+						<form action="{% url 'offers:getDeal' %}" method="POST" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+							
+							<div class="search_item">
+								<label for="id_tour"></label>
+								<div>Tour</div>								
+								<select name="tour" required_id="id_tour" class="dropdown_item_select search_input" placeholder="" required="required">
+									<option hidden disabled selected value> Bạn muốn đi đâu? </option>
+									{% for item in tourList %}
+									<option>{{item.title}}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div class="search_item">
+								<label for="id_name"></label>
+								<div>Họ và tên</div>								
+								<input type="text" name="name" maxlength="50" required_id="id_name" class="destination search_input" placeholder="">
+							</div>
+							<div class="search_item">
+								<label for="id_phone_number"></label>
+								<div>Số điện thoại</div>								
+								<input type="text" name="phone_number" maxlength="15" required_id="id_phone_number" class="destination search_input" placeholder="">
+							</div>
+							<div class="search_item">
+								<label for="id_adult"></label>
+								<div>Người lớn</div>								
+								<select name="adult" required_id="id_adult" id="adults_2" class="dropdown_item_select search_input">
+									<option>0</option>
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+									<option>04</option>
+									<option>05</option>
+									<option>06</option>
+									<option>07</option>
+									<option>08</option>
+									<option>09</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+								</select>
+							</div>
+							<div class="search_item">
+								<label for="id_children"></label>
+								<div>Trẻ em</div>								
+								<select name="children" required_id="id_children" id="adults_2" class="dropdown_item_select search_input">
+									<option>0</option>
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+									<option>04</option>
+									<option>05</option>
+									<option>06</option>
+									<option>07</option>
+									<option>08</option>
+									<option>09</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+								</select>
+							</div>
+							<!--
+							<div class="extras">
+								<ul class="search_extras clearfix">
+									<li class="search_extras_item">
+										<div class="clearfix">
+											<input type="checkbox" id="search_extras_1" class="search_extras_cb">
+											<label for="search_extras_1">Pet Friendly</label>
+										</div>	
+									</li>
+							
+								</ul>
+							</div>
+							-->
+							<button class="button search_button">Đặt tour<span></span><span></span><span></span></button>
+							{% csrf_token %}
+						</form>
+					</div>
+
+					<!-- Search Panel 
+
+					<div class="search_panel">
+						<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+							<div class="search_item">
+								<div>destination</div>
+								<input type="text" class="destination search_input" required="required">
+							</div>
+							<div class="search_item">
+								<div>check in</div>
+								<input type="text" class="check_in search_input" placeholder="YYYY-MM-DD">
+							</div>
+							<div class="search_item">
+								<div>check out</div>
+								<input type="text" class="check_out search_input" placeholder="YYYY-MM-DD">
+							</div>
+							<div class="search_item">
+								<div>adults</div>
+								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+								</select>
+							</div>
+							<div class="search_item">
+								<div>children</div>
+								<select name="children" id="children_2" class="dropdown_item_select search_input">
+									<option>0</option>
+									<option>02</option>
+									<option>03</option>
+								</select>
+							</div>
+							<button class="button search_button">search<span></span><span></span><span></span></button>
+						</form>
+					</div>
+					-->
+				</div>
+			</div>
+		</div>	
+		
+	</div>
+
+	<!-- Intro -->
+	
+	<div class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="intro_title text-center">Những tour nổi bật của chúng tôi</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="intro_text text-center">
+						<p>Đồng hành cùng MAM Travel là một sự lựa chọn tuyệt với bởi những trải nghiệm thú vị mà chúng tôi đem lại. Chúc quý khách có những chuyến đi tuyệt vời!</p>
+					</div>
+				</div>
+			</div>
+			<div class="row intro_items">
+				{% for item in tourList %}
+				<!-- Intro Item -->
+				{% if item.review_title == "very good" %}
+				<div class="col-lg-4 intro_col">
+					<div class="intro_item">
+						<div class="intro_item_overlay"></div>
+						<!-- Image by https://unsplash.com/@dnevozhai -->
+						<div class="intro_item_background" style="background-image:url('{{MEDIA_URL}}{{item.image.url}}')"></div>
+						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+							<div class="intro_date">{{item.trip_duration}}</div>
+							<div class="button intro_button"><div class="button_bcg"></div><a href="{% url 'offers:offersDetail' item.id %}">Chi tiết<span></span><span></span><span></span></a></div>
+							<div class="intro_center text-center">
+								<h3>{{item.title}}</h3>
+								<div class="intro_price">{{item.price}} VND</div>
+								<div class="rating rating_4">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA -->
+
+	<div class="cta">
+		<!-- Image by https://unsplash.com/@thanni -->
+		<div class="cta_background" style="background-image:url(static/images/cta.jpg)"></div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col">
+
+					<!-- CTA Slider -->
+
+					<div class="cta_slider_container" >
+						<div class="owl-carousel owl-theme cta_slider">
+							
+							<!-- CTA Slider Item -->
+							{% for item in special %}
+							<div class="owl-item cta_item text-center" style="background-image:url('{{MEDIA_URL}}{{item.image.url}}')" >
+								<div class="cta_title"></div>
+								<!--
+								<div class="rating_r rating_r_4">
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+								</div>
+								-->
+								<p class="cta_text"></p>
+								<div class="button cta_button"><div class="button_bcg"></div><a href="{% url 'offers:offersDetail' item.tours.id %}">Xem ngay<span></span><span></span><span></span></a></div>
+							</div>
+							{% endfor %}
+						</div>
+
+						<!-- CTA Slider Nav - Prev -->
+						<div class="cta_slider_nav cta_slider_prev">
+							<svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+								<defs>
+									<linearGradient id='cta_grad_prev'>
+										<stop offset='0%' stop-color='#fa9e1b'/>
+										<stop offset='100%' stop-color='#8d4fff'/>
+									</linearGradient>
+								</defs>
+								<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+								M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+								C22.545,2,26,5.541,26,9.909V23.091z"/>
+								<polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+								11.042,18.219 "/>
+							</svg>
+						</div>
+						
+						<!-- CTA Slider Nav - Next -->
+						<div class="cta_slider_nav cta_slider_next">
+							<svg version="1.1" id="Layer_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+								<defs>
+									<linearGradient id='cta_grad_next'>
+										<stop offset='0%' stop-color='#fa9e1b'/>
+										<stop offset='100%' stop-color='#8d4fff'/>
+									</linearGradient>
+								</defs>
+							<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+							M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+							C22.545,2,26,5.541,26,9.909V23.091z"/>
+							<polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+							17.046,15.554 "/>
+							</svg>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+					
+	</div>
+
+	<!-- Offers -->
+
+	<div class="offers">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<h2 class="section_title">Tour trải nghiệm</h2>
+					
+				</div>
+			</div>
+			
+			<div class="row offers_items">
+				
+				<!-- Offers Item -->
+				{% for item in page_tour %}
+				<a href="{% url 'offers:offersDetail' item.id %}">
+					<div class="col-lg-4 offers_col">
+						
+						<div class="offers_item">
+							
+								<div class="row">
+									<div class="col-lg">
+										<div class="offers_image_container">
+											<!-- Image by https://unsplash.com/@kensuarez -->
+											<div class="offers_image_background" style="background-image:url('{{MEDIA_URL}}{{item.image.url}}')"></div>
+											<div class="offer_name"><a href="{% url 'offers:offersDetail' item.id %}">{{item.price}}</a></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									
+									<div class="col-lg offers_content">
+										<div class="col-lg offers_price">{{item.title}}<span>{{item.trip_duration}}</span></div>
+										<!--
+										<div class="rating_r rating_r_4 offers_rating">
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+										</div>
+										-->
+										<div class="col-lg">
+											<p class="offers_text">{{item.description}}</p>
+										</div>
+										<!--
+										<div class="offers_icons">
+											<ul class="offers_icons_list">
+												<li class="offers_icons_item"><img src="{% static 'images/post.png' %}" alt=""></li>
+												<li class="offers_icons_item"><img src="{% static 'images/compass.png' %}" alt=""></li>
+												<li class="offers_icons_item"><img src="{% static 'images/bicycle.png' %}" alt=""></li>
+												<li class="offers_icons_item"><img src="{% static 'images/sailboat.png' %}" alt=""></li>
+											</ul>
+										</div>
+										
+										
+										-->
+										<div class="col-lg offers_link"><a href="{% url 'offers:offersDetail' item.id %}">Xem chi tiết</a></div>
+									</div>
+									
+								</div>
+							
+						</div>
+						
+					</div>
+				</a>
+				{% endfor %}
+				
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Testimonials -->
+
+	<div class="testimonials">
+		<div class="test_border"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<h2 class="section_title">Cảm nhận của khách hàng</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					
+					<!-- Testimonials Slider -->
+
+					<div class="test_slider_container">
+						<div class="owl-carousel owl-theme test_slider">
+
+							<!-- Testimonial Item -->
+							<div class="owl-item">
+								<div class="test_item">
+									<div class="test_image"><img src="{% static 'images/test_4.jpg' %}" alt=""></div>
+									<div class="test_icon"><img src="{% static 'images/backpack.png' %}" alt=""></div>
+									<div class="test_content_container">
+										<div class="test_content">
+											<div class="test_item_info">
+												<div class="test_name">Nguyễn Đắc Trường</div>
+												<div class="test_date">Nov 28, 2019</div>
+											</div>
+											<div class="test_quote_title">" Trải nghiệm khá tốt "</div>
+											<p class="test_quote_text">Mình hơi khó tính nên chấm tạm được.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonial Item -->
+							<div class="owl-item">
+								<div class="test_item">
+									<div class="test_image"><img src="{% static 'images/test_2.jpg' %}" alt="https://unsplash.com/@tschax"></div>
+									<div class="test_icon"><img src="{% static 'images/backpack.png' %}" alt=""></div>
+									<div class="test_content_container">
+										<div class="test_content">
+											<div class="test_item_info">
+												<div class="test_name">Phạm Duy Ánh</div>
+												<div class="test_date">Dec 18, 2019</div>
+											</div>
+											<div class="test_quote_title">" Trải nghiệm rất tốt "</div>
+											<p class="test_quote_text">Rất hài lòng với chuyến đi cùng MAM Travel. Bạn hướng dẫn viên rất xinh.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonial Item -->
+							<div class="owl-item">
+								<div class="test_item">
+									<div class="test_image"><img src="{% static 'images/test_3.jpg' %}" alt="https://unsplash.com/@seefromthesky"></div>
+									<div class="test_icon"><img src="{% static 'images/backpack.png' %}" alt=""></div>
+									<div class="test_content_container">
+										<div class="test_content">
+											<div class="test_item_info">
+												<div class="test_name">Cao Duy Sơn</div>
+												<div class="test_date">Dec 06, 2020</div>
+											</div>
+											<div class="test_quote_title">" Trải nghiệm khá tốt "</div>
+											<p class="test_quote_text">Nói chung là ok.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonial Item -->
+							<div class="owl-item">
+								<div class="test_item">
+									<div class="test_image"><img src="{% static 'images/test_1.jpg' %}" alt="https://unsplash.com/@anniegray"></div>
+									<div class="test_icon"><img src="{% static 'images/backpack.png' %}" alt=""></div>
+									<div class="test_content_container">
+										<div class="test_content">
+											<div class="test_item_info">
+												<div class="test_name">Cao Đức Anh</div>
+												<div class="test_date">May 24, 2020</div>
+											</div>
+											<div class="test_quote_title">" Trải nghiệm khá tốt "</div>
+											<p class="test_quote_text">Good trip!</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Testimonials Slider Nav - Prev -->
+						<div class="test_slider_nav test_slider_prev">
+							<svg version="1.1" id="Layer_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+								<defs>
+									<linearGradient id='test_grad_prev'>
+										<stop offset='0%' stop-color='#fa9e1b'/>
+										<stop offset='100%' stop-color='#8d4fff'/>
+									</linearGradient>
+								</defs>
+								<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+								M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+								C22.545,2,26,5.541,26,9.909V23.091z"/>
+								<polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+								11.042,18.219 "/>
+							</svg>
+						</div>
+						
+						<!-- Testimonials Slider Nav - Next -->
+						<div class="test_slider_nav test_slider_next">
+							<svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+								<defs>
+									<linearGradient id='test_grad_next'>
+										<stop offset='0%' stop-color='#fa9e1b'/>
+										<stop offset='100%' stop-color='#8d4fff'/>
+									</linearGradient>
+								</defs>
+							<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+							M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+							C22.545,2,26,5.541,26,9.909V23.091z"/>
+							<polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+							17.046,15.554 "/>
+							</svg>
+						</div>
+
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="trending">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<h2 class="section_title">Bài viết liên quan</h2>
+				</div>
+			</div>
+			<div class="row trending_container">
+
+				<!-- Trending Item -->
+				{% for item in blogList %}
+				<div class="col-lg-3 col-sm-6">
+					<div class="trending_item clearfix">
+						<div class="trending_image"><img src="{{ MEDIA_URL }}{{ item.image.url }}" alt="https://unsplash.com/@fransaraco"></div>
+						<div class="trending_content">
+							<div class="trending_title"><a href="{% url 'blog:blogDetail' item.id %}">{{item.title}}</a></div>
+							<div class="trending_price">{{item.author}}</div>
+							<div class="trending_location">{{item.create_at}}</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="contact">
+		<div class="contact_background" style="background-image:url(static/images/contact.png)"></div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="contact_image">
+						
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="contact_form_container">
+						<div class="contact_title text-center">liên hệ với chúng tôi</div>
+						<form action="{% url 'contact:contact' %}" method="POST" id="contact_form" class="contact_form text-center"> {% csrf_token %}
+							<label for="id_name">Name</label>
+							<input type="text" name="name" maxlength="30" required id="id_name" id="contact_form_name" class="contact_form_name input_field" placeholder="Tên" required="required" data-error="Name is required.">
+							<label for="id_email">Email</label>
+							<input type="email" name="email" maxlength="250" required id="id_email" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
+							<label for="id_message">Message</label>
+							<textarea name="message" maxlength="1000" required id="id_message" id="contact_form_message" class="text_field contact_form_message" name="Mess" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
+							<button type="submit" id="form_submit_button" class="form_submit_button button trans_200">Gửi đi<span></span><span></span><span></span></button>
+							<!-- Template ban đầu:
+							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Tên" required="required" data-error="Name is required.">
+							<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
+							<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Subject" required="required" data-error="Subject is required.">
+							<textarea id="contact_form_message" class="text_field contact_form_message" name="Mess" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
+							<button type="submit" id="form_submit_button" class="form_submit_button button trans_200">Gửi<span></span><span></span><span></span></button>
+							--> 
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	{% endblock %}
+	
+{% block script %}
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+{% endblock %}

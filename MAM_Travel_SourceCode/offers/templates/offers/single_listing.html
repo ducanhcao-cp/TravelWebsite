@@ -1,0 +1,415 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Single Listing</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travelix Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'plugins/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/single_listing_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/single_listing_responsive.css' %}">
+{% endblock %}
+
+    {% block content %}
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/single_background.jpg' %}"></div>
+		<div class="home_content">
+			<div class="home_title">the offers</div>
+		</div>
+	</div>
+
+	<!-- Offers -->
+
+	<div class="listing">
+		
+		<!-- Search -->
+
+		<div class="search">
+			<div class="search_inner">
+
+				<!-- Search Contents -->
+				
+				<div class="container fill_height no-padding">
+					<div class="row fill_height no-margin">
+						<div class="col fill_height no-padding">
+
+							<!-- Search Tabs -->
+
+							<div class="search_tabs_container">
+								<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/suitcase.png' %}" alt=""><span>Đặt tour</span></div>
+									
+								<!-- Open feature
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/bus.png' %}" alt="">car rentals</div>
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/departure.png' %}" alt="">flights</div>
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="{% static 'images/island.png' %}" alt="">trips</div>
+								-->
+								</div>		
+							</div>
+
+							<!-- Search Panel -->
+
+							<div class="search_panel active">
+								<form action="{% url 'offers:getDeal' %}" method="POST" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+									
+									<div class="search_item">
+										<label for="id_tour"></label>
+										<div>Tour</div>								
+										<select name="tour" required_id="id_tour" class="dropdown_item_select search_input" placeholder="" required="required">
+											<option hidden disabled selected value> Bạn muốn đi đâu? </option>
+											{% for item in tourList %}
+											<option>{{item.title}}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<div class="search_item">
+										<label for="id_name"></label>
+										<div>Họ và tên</div>								
+										<input type="text" name="name" maxlength="50" required_id="id_name" class="destination search_input" placeholder="">
+									</div>
+									<div class="search_item">
+										<label for="id_phone_number"></label>
+										<div>Số điện thoại</div>								
+										<input type="text" name="phone_number" maxlength="15" required_id="id_phone_number" class="destination search_input" placeholder="">
+									</div>
+									<div class="search_item">
+										<label for="id_adult"></label>
+										<div>Người lớn</div>								
+										<select name="adult" required_id="id_adult" id="adults_2" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+											<option>04</option>
+											<option>05</option>
+											<option>06</option>
+											<option>07</option>
+											<option>08</option>
+											<option>09</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+										</select>
+									</div>
+									<div class="search_item">
+										<label for="id_children"></label>
+										<div>Trẻ em</div>								
+										<select name="children" required_id="id_children" id="adults_2" class="dropdown_item_select search_input">
+											<option>0</option>
+											<option>01</option>
+											<option>02</option>
+											<option>03</option>
+											<option>04</option>
+											<option>05</option>
+											<option>06</option>
+											<option>07</option>
+											<option>08</option>
+											<option>09</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+										</select>
+									</div>
+									<!--
+									<div class="extras">
+										<ul class="search_extras clearfix">
+											<li class="search_extras_item">
+												<div class="clearfix">
+													<input type="checkbox" id="search_extras_1" class="search_extras_cb">
+													<label for="search_extras_1">Pet Friendly</label>
+												</div>	
+											</li>
+									
+										</ul>
+									</div>
+									-->
+									
+									<button class="button search_button">Gửi yêu cầu<span></span><span></span><span></span></button>
+									{% csrf_token %}
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</div>
+	    
+		<!-- Single Listing -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="single_listing">
+						
+						<!-- Hotel Info -->
+
+						<div class="hotel_info">
+
+							<!-- Title -->
+							<div class="hotel_title_container d-flex flex-lg-row flex-column">
+								<div class="hotel_title_content">
+									<h1 class="hotel_title">{{tourDetail.title}}</h1>
+									<div class="rating_r rating_r_4 hotel_rating">
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
+									<div class="hotel_location">345 677 Gran Via Street, no 34, Madrid, Spain</div>
+								</div>
+								<div class="hotel_title_button ml-lg-auto text-lg-right">
+									<div class="button book_button trans_200"><a href="{% url 'offers:offers' %}">Quay lại<span></span><span></span><span></span></a></div>
+									<div class="hotel_map_link_container">
+										<div class="hotel_map_link">See Location on Map</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Listing Image -->
+
+							<div class="hotel_image">
+								<img src="{{MEDIA_URL}}{{tourDetail.image.url}}" alt="">
+								<div class="hotel_review_container d-flex flex-column align-items-center justify-content-center">
+									<div class="hotel_review">
+										<div class="hotel_review_content">
+											<div class="hotel_review_title">{{tourDetail.review_title}}</div>
+											<div class="hotel_review_subtitle">{{tourDetail.review_number}} reviews</div>
+										</div>
+										<div class="hotel_review_rating text-center">{{tourDetail.rating}}</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Hotel Gallery -->
+
+							<div class="hotel_gallery">
+								<div class="hotel_slider_container">
+									<div class="owl-carousel owl-theme hotel_slider">
+										
+										<!-- Hotel Gallery Slider Item -->
+										{% for photo in photos %}
+										
+										<div class="owl-item {% if forloop.counter0 == 0 %} active {% endif %}">
+											<a class="colorbox cboxElement" href="{{ MEDIA_URL }}{{ photo.images.url }}">
+												<img src="{{ MEDIA_URL }}{{ photo.images.url }}" >
+											</a>
+										</div>
+
+										{% endfor %}
+									</div>
+
+									<!-- Hotel Slider Nav - Prev -->
+									<div class="hotel_slider_nav hotel_slider_prev">
+										<svg version="1.1" id="Layer_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+											<defs>
+												<linearGradient id='hotel_grad_prev'>
+													<stop offset='0%' stop-color='#fa9e1b'/>
+													<stop offset='100%' stop-color='#8d4fff'/>
+												</linearGradient>
+											</defs>
+											<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+											M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+											C22.545,2,26,5.541,26,9.909V23.091z"/>
+											<polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+											11.042,18.219 "/>
+										</svg>
+									</div>
+									
+									<!-- Hotel Slider Nav - Next -->
+									<div class="hotel_slider_nav hotel_slider_next">
+										<svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+											<defs>
+												<linearGradient id='hotel_grad_next'>
+													<stop offset='0%' stop-color='#fa9e1b'/>
+													<stop offset='100%' stop-color='#8d4fff'/>
+												</linearGradient>
+											</defs>
+										<path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+										M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+										C22.545,2,26,5.541,26,9.909V23.091z"/>
+										<polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+										17.046,15.554 "/>
+										</svg>
+									</div>
+
+								</div>
+							</div>
+
+							<!-- Hotel Info Text -->
+
+							<div class="hotel_info_text">
+								<p>{{tourDetail.content|safe}}</p>
+							</div>
+
+							<!-- Hotel Info Tags -->
+
+							<div class="hotel_info_tags">
+								<ul class="hotel_icons_list">
+									<li class="hotel_icons_item"><img src="{% static 'images/post.png' %}" alt=""></li>
+									<li class="hotel_icons_item"><img src="{% static 'images/compass.png' %}" alt=""></li>
+									<li class="hotel_icons_item"><img src="{% static 'images/bicycle.png' %}" alt=""></li>
+									<li class="hotel_icons_item"><img src="{% static 'images/sailboat.png' %}" alt=""></li>
+								</ul>
+							</div>
+
+						</div>
+						
+						<!-- Rooms -->
+
+						<div class="rooms">
+
+							<!-- Room -->
+							<div class="room">
+
+								<!-- Room -->
+								<div class="row">
+									<div class="col-lg-2">
+										<div class="room_image"><img src="{% static 'images/room_1.jpg' %}" alt="https://unsplash.com/@grovemade"></div>
+									</div>
+									<div class="col-lg-7">
+										<div class="room_content">
+											<div class="room_title">Double or Twin Room</div>
+											<div class="room_price">$99/night</div>
+											<div class="room_text">FREE cancellation before 23:59 on 20 December 2017</div>
+											<div class="room_extra">Breakfast $7.50</div>
+										</div>
+									</div>
+									<div class="col-lg-3 text-lg-right">
+										<div class="room_button">
+											<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+										</div>
+									</div>
+								</div>	
+							</div>
+
+							<!-- Room -->
+							<div class="room">
+
+								<!-- Room -->
+								<div class="row">
+									<div class="col-lg-2">
+										<div class="room_image"><img src="{% static 'images/room_2.jpg' %}" alt="https://unsplash.com/@oowgnuj"></div>
+									</div>
+									<div class="col-lg-7">
+										<div class="room_content">
+											<div class="room_title">Double or Twin Room</div>
+											<div class="room_price">$99/night</div>
+											<div class="room_text">FREE cancellation before 23:59 on 20 December 2017</div>
+											<div class="room_extra">Breakfast $7.50</div>
+										</div>
+									</div>
+									<div class="col-lg-3 text-lg-right">
+										<div class="room_button">
+											<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+										</div>
+									</div>
+								</div>	
+							</div>
+
+						</div>
+
+						<!-- Reviews -->
+
+						<div class="reviews">
+							<div class="reviews_title">reviews</div>
+							<div class="reviews_container">
+
+								<!-- Review -->
+								<div class="review">
+									<div class="row">
+										<div class="col-lg-1">
+											<div class="review_image">
+												<img src="{% static 'images/review_1.jpg' %}" alt="https://unsplash.com/@saaout">
+											</div>
+										</div>
+										<div class="col-lg-11">
+											<div class="review_content">
+												<div class="review_title_container">
+													<div class="review_title">"We loved the services"</div>
+													<div class="review_rating">9.5</div>
+												</div>
+												<div class="review_text">
+													<p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
+												</div>
+												<div class="review_name">Christinne Smith</div>
+												<div class="review_date">12 November 2017</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Review -->
+								<div class="review">
+									<div class="row">
+										<div class="col-lg-1">
+											<div class="review_image">
+												<img src="{% static 'images/review_2.jpg' %}" alt="Image by Andrew Robles">
+											</div>
+										</div>
+										<div class="col-lg-11">
+											<div class="review_content">
+												<div class="review_title_container">
+													<div class="review_title">"Nice staff and great location"</div>
+													<div class="review_rating">9.5</div>
+												</div>
+												<div class="review_text">
+													<p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
+												</div>
+												<div class="review_name">Christinne Smith</div>
+												<div class="review_date">12 November 2017</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<!-- Location on Map -->
+
+						<div class="location_on_map">
+							<div class="location_on_map_title">location on map</div>
+
+							<!-- Google Map -->
+		
+							<div class="travelix_map">
+								<div id="google_map" class="google_map">
+									<div class="map_container">
+										<div id="map"></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+    {% endblock %}
+
+{% block script %}
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'plugins/colorbox/jquery.colorbox-min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<script src="{% static 'js/single_listing_custom.js' %}"></script>
+{% endblock %}
