@@ -1,9 +1,8 @@
 # TravelWebsite
 Đặt tour du lịch
-Bài tập lớn môn cơ sở dữ liệu
 Tên website: MAM Travel
-Nội dung website: Giới thiệu các tour du lịch cung đường Tây Bắc và cung cấp đặt tour trực tuyến
-Các tính năng: Xem giới thiệu tour, đặt tour trực tuyến, gửi liên hệ yêu cầu hỗ trợ
+Nội dung website: Giới thiệu các tour du lịch leo núi và cung cấp đặt tour trực tuyến
+Các tính năng: Xem giới thiệu tour, đặt tour trực tuyến, gửi liên hệ yêu cầu hỗ trợ, đăng nhập đối với nhân viên quản lí website
 
 - Trang chủ: Giới thiệu tổng quan về công ty và các dịch vụ, tour trải nghiệm
 - Giới thiệu: Trang giới thiệu doanh nghiệp
